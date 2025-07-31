@@ -48,7 +48,7 @@ def fetch_single_stock_period(
     if write_csv:
         if csv_filename is None:
             csv_filename = f"{symbol}_{period}_{interval}.csv"
-        data.to_csv(csv_filename)
+        data.to_csv(csv_filename,sep=";")
         print(f"Data saved to {csv_filename}")
 
     return data
@@ -67,7 +67,8 @@ def fetch_single_stock_period(
 
 def fetch_stock_current(
         symbols: list[str],
-        write_csv: bool = True
+        write_csv: bool = True,
+        csv_filename= "record.csv"
     ) -> pd.DataFrame:
     """
     Fetch current price and key details for a list of stock symbols.
@@ -106,8 +107,8 @@ def fetch_stock_current(
     df = pd.DataFrame(records)
 
     if write_csv:
-        df.to_csv("record.csv", index=False)
-        print("Data saved to record.csv")
+        df.to_csv(csv_filename, index=False,sep=";")
+        print(f"Data saved to {csv_filename}")
 
     return df
 
