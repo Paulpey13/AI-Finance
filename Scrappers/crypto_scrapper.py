@@ -100,7 +100,7 @@ def fetch_single_crypto_period_binance(
 
     # Format columns based on Binance Klines API doc
     df = pd.DataFrame(all_klines, columns=[
-        "open_time", "open", "high", "low", "close", "volume",
+        "symbol","open_time", "open", "high", "low", "close", "volume",
         "close_time", "quote_asset_volume", "number_of_trades",
         "taker_buy_base_asset_volume", "taker_buy_quote_asset_volume", "ignore"
     ])
@@ -108,7 +108,7 @@ def fetch_single_crypto_period_binance(
     # Convert timestamps to datetime
     df["open_time"] = pd.to_datetime(df["open_time"], unit="ms")
     df["close_time"] = pd.to_datetime(df["close_time"], unit="ms")
-
+    df["symbol"]=symbol
     # Set open_time as index
     df.set_index("open_time", inplace=True)
 
