@@ -1,1 +1,6 @@
-config
+config/*
+*__pycache__*
+data/*
+*.joblib
+*.pth
+Bank_frauds_detection/models/*

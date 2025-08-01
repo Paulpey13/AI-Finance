@@ -44,7 +44,7 @@ def fetch_single_stock_period(
     if data.empty:
         print(f"No data found for {symbol} with the specified parameters.")
         return data
-
+    data["symbol"] = symbol
     if write_csv:
         if csv_filename is None:
             csv_filename = f"{symbol}_{period}_{interval}.csv"

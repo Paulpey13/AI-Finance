@@ -18,6 +18,8 @@ This repository contains my various projects related to AI & Finance, aimed at o
 ### ML Predictions
 - Baseline [TODO]
 
+### Portfolio optimization
+
 
 ### LLM For sentiment analysis and news tracking
 
