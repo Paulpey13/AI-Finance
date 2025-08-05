@@ -7,13 +7,7 @@ from urllib.parse import urlencode
 import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-
 from config.CONFIG import bi_api_key, bi_sec_key
-
-BASE_URL = "https://api.binance.com"
-
-
 
 import pandas as pd
 import requests
